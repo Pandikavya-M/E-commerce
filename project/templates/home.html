@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wallet</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+        <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playwrite Danmark Loopet">
+        
+        
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        
+        <div class="banner" style="margin-top: 100px;">
+            {% for x in pics %}
+                {% if forloop.counter == 2 %}
+                    <div class="image-container">
+                        <img src="{{ x.image1.url }}" class="img-fluid" alt="No img">
+                    </div>        
+                {% endif %}
+            {% endfor %}
+            <a href="{% url 'shop' %}" class="btn overlay-btn">Discover for more</a>
+        </div>
+
+
+        <div class="topp">
+            <p>SHOP BY CATEGORIES</p>
+            <h3>Popular Categories</h3>
+            <div class="row">
+                {% for x in pics|slice:"2:6" %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="card "> 
+                        <a href="{% url 'shop' %}" class="card-text">      
+                        <img src="{{ x.image1.url }}" class="card-img-top" alt="Top Categories">    
+                        <div class="card-body">
+                            <p class="card-title">{{x.caption}}</p>
+                        </div>
+                        </a> 
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="slider">
+            <!-- <h3>Exclusive Offers</h3> -->
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="{% url 'product' name='Kitchen Utensils' %}">
+                        {% for x in pics %}
+                            {% if forloop.counter == 7 %}
+                                <img src="{{ x.image1.url }}" alt="no offer">
+                            {% endif %}
+                        {% endfor %}
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="{% url 'product' name='Combo-Sets' %}">
+                        {% for x in pics %}
+                            {% if forloop.counter == 8 %}
+                                <img src="{{ x.image1.url }}" alt="no offer">
+                            {% endif %}
+                        {% endfor %}
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="{% url 'product' name='Footwears' %}">
+                        {% for x in pics %}
+                            {% if forloop.counter == 9 %}
+                                <img src="{{ x.image1.url }}" alt="no offer">
+                            {% endif %}
+                        {% endfor %}
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="{% url 'product' name='Home Decors' %}">
+                        {% for x in pics %}
+                            {% if forloop.counter == 10 %}
+                                <img src="{{ x.image1.url }}" alt="no offer">
+                            {% endif %}
+                        {% endfor %} 
+                        </a>   
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="container late">
+            <h3>Trending Products</h3>
+            <hr>
+            <div class="row">
+                {% for prod in trending_products %}
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                            <img src="{{ prod.prod_image.url }}" class="card-img-top" alt="No image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{prod.name}}</h5>
+                            <p class="card-text">₹{{prod.off_price}}  <span>₹{{prod.original_price}}</span></p>    
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No trending products available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="about container">
+            <div class="row bg-img">
+                <div class="col-7 col-md-6 offset-md-1 col-lg-4 offset-lg-3">
+                    <div class="image-wrapper">
+                        {% for x in pics %}
+                        {% if forloop.counter == 11 %}
+                            <img src="{{ x.image1.url }}" alt="bg" class="img-fluid">
+                        {% endif %}
+                        {% endfor %}
+                        <div class="ab">
+                            <h4>Our Vision</h4>
+                            <p>At Wallet, we believe in the power of handmade goods. Each item on our platform is a testament to the dedication and skill of artisans who pour their heart and soul into their creations. Our vision is to provide these talented individuals with a global stage to showcase their work, ensuring that their craft reaches every corner of the world.<a href="#" class="about-btn">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-2 fb">
+            <h3>FeedBack</h3>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center ">
+                <div class="row  prd">
+                    <div class="col-6 col-sm-4 col-md-5 col-lg-6 fb1">
+                        {% for x in pics %}
+                            {% if forloop.counter == 12 %}
+                                <img src="{{ x.image1.url }}" alt="no offer" class="img-fluid">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-7 col-lg-6 fb1">
+                        <p>"The handmade jewelry and handwoven thermal wear I purchased are both exceptional. The craftsmanship is impressive, and the quality is top-notch. The personal touches, including the artisan’s note, made the experience even better. Highly recommend!"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                <div class="row vnd">
+                    <div class="col-6 col-sm-4 col-md-5 col-lg-6 fb1">
+                        {% for x in pics %}
+                            {% if forloop.counter == 13 %}
+                                <img src="{{ x.image1.url }}" alt="no offer" class="img-fluid">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-7 col-lg-6 fb1">
+                        <p>"Wallet has been a game-changer for my business. The platform is easy to use, and it has helped me reach customers I never could have found on my own. I love that I can share my story with each product, and the support from the Wallet team has been fantastic. It’s a great way for artisans like me to connect with a wider audience."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include 'footer.html' %}
+        <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+</html>

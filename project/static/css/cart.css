@@ -1,0 +1,122 @@
+body{
+    
+    background-color: #331F16 !important;
+    overflow-x: hidden;
+}
+
+/* -------------------------------items---------------------------- */
+.row h3{
+    color: #F5DF6B;
+    margin: 50px 0 30px 0;
+}
+.row hr{
+    color: #F5DF6B;
+    margin: 0 0 90px 0;
+}
+.item{
+    border:1px solid;
+    border-color: #BC892D;
+    margin: 40px 0;
+    padding: 2%;
+    position: relative;
+}
+.item .image{
+    /* border:1px solid;
+    border-color: #BC892D; */
+    align-items: center;
+    justify-items: center;
+    vertical-align: middle;
+    
+}
+.item .para{
+    /* border:1px solid;
+    border-color: #BC892D; */
+    padding-left: 3%;
+    
+}
+.item .image img {
+    /* width: 100%; */
+    /* height: 100%; */
+    object-fit: cover;
+    margin: auto 0;
+}
+.item h5{
+  color:#ebac36;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 20px 0 30px 0;
+}
+.item p{
+    color:#d49c34;
+    font-size: 21px;
+    margin: 0 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.item p span{
+    text-decoration: line-through;
+    font-size: 16px;
+    color:red
+}
+.item .cost{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10%;
+    margin-left: 70%;
+}
+.price{
+    border:1px solid;
+    border-color: #BC892D;
+    margin: 100px 0;
+    padding: 5% 5%;
+}
+.price h4{
+    color: #BC892D;
+}
+.price p{
+    color: #BC892D;
+}
+.price .pricepara {
+    margin: 50px 0;
+    padding-left: 7%;
+}
+.price .priceans{
+    margin: 50px 0;
+    padding-right: 7%;
+}
+.price .pricepara hr, .price .priceans hr{
+    color: #F5DF6B;
+    margin: 0 0 30px 0;
+}
+.price .priceans{
+    text-align: right;
+}
+.price button{
+    width: 100%;
+}
+.input-group-sm .btn-minus,
+.input-group-sm .btn-plus {
+    box-shadow: none !important;
+    border: none;
+    background: none; 
+    outline: none; 
+    transition: none; 
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #BC892D;
+}
+.close:hover{
+    border: 1px solid #F5DF6B;
+}
+.btnEnter{
+    position: absolute;
+    bottom: 30px;
+    left: 120px;
+    border-radius: none;
+}

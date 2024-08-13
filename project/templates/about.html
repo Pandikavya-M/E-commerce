@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-Wallet</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+</head>
+<body>
+    {% include 'nav.html'%}
+    <div class="row ab-us"style="margin-top: 100px;">
+        <div class="col img">
+            {% for x in pic %}
+                {% if forloop.counter == 1 %}
+                    <img src="{{ x.image2.url }}" class="card-img-top" alt="About">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col para">
+            <h3><span>Ab</span>out Us</h3>
+            <p>Welcome to Wallet, your one-stop destination for unique, handmade treasures. Our mission is to bridge the gap between talented artisans and appreciative customers across the globe. Wallet is more than just an e-commerce platform; it's a community that celebrates craftsmanship, creativity, and the spirit of entrepreneurship.</p>
+        </div>
+    </div>
+    <div class="vision">
+        <div class="lab"></div>
+        <div class="vimg">
+            {% for x in pic %}
+                {% if forloop.counter == 2 %}
+                    <img src="{{ x.image2.url }}" class="card-img-top" alt="Vision">
+                {% endif %}
+            {% endfor %} 
+        </div>
+        <div class="vpara">
+            <h3>Our Vision</h3>
+            <p>At Wallet, we believe in the power of handmade goods. Each item on our platform is a testament to the dedication and skill of artisans who pour their heart and soul into their creations. Our vision is to provide these talented individuals with a global stage to showcase their work, ensuring that their craft reaches every corner of the world.</p>
+        </div>
+    </div>
+    <div class="wwallet">
+        <h3 class="topic">Why "Wallet"?</h3>
+        
+        <p>The name Wallet signifies the journey of value exchange. It's the initial point where money goes and the destiny point where money comes. This embodies our core philosophy: to create a seamless and rewarding experience for both our artisans and our customers. When you purchase from Wallet, you are not just buying a product; you are supporting a dream, a craft, and a livelihood.</p>
+        {% for x in pic %}
+            {% if forloop.counter == 3 %}
+                <img src="{{ x.image2.url }}" class="img-wallet" alt="Vision">
+            {% endif %}
+        {% endfor %} 
+    </div>
+    <div class="row join">
+        <div class="col">
+            {% for x in pic %}
+            {% if forloop.counter == 4 %}
+                <img src="{{ x.image2.url }}" class="img-wallet" alt="Vision">
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 para">
+            <h3>Join Us</h3>
+            <p>Discover a world of handmade wonders at Wallet. Whether you are looking for a unique gift, a piece of art, or something special for yourself, you'll find it here. Join us in supporting artisans and celebrating the beauty of handcrafted goods. Together, we can make a difference, one craft at a time.</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center commit">
+        <div class="col-9 col-lg-6">
+            <h3>Our Commitment</h3>
+            <p>We are committed to providing a platform that supports and uplifts small-scale artisans. By choosing Wallet, you are contributing to a fair and ethical marketplace where every purchase has a direct positive impact on the lives of the creators. We ensure that every transaction is secure, transparent, and beneficial to both the seller and the buyer.</p>
+        </div>
+    </div>
+    
+    {% include 'footer.html' %}
+    <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

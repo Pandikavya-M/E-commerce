@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Displayt">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="row">
+
+    <div class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-9 col-sm-9 col-md-6 col-lg-5 px-4 log">
+                    <h2>Log In</h2>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                            {% if form.errors.username %}
+                                <label class="text-danger">{{ form.errors.username }}</label>
+                            {% endif %}
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                            {% if form.errors.password1 %}
+                                <label class="text-danger">{{ form.errors.password1 }}</label>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-warning">Login</button>
+                    </form>
+                    <div class="endline">
+                        <p>Don't have an account?  <a class="reg" href="{%url 'signup' %}"> Signup </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    
+    <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+body{
+    
+    background-color: #331F16 !important;
+    overflow-x: hidden;
+}
+.container .row h3{
+    color: #F5DF6B;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.container hr{
+    color: #F5DF6B;
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0);
+    margin-bottom: 40px;
+}
+.custom-breadcrumb a {
+    color: #D7B947;
+    text-decoration: none;
+  }
+  
+  .custom-breadcrumb .breadcrumb-item.active {
+    color: #BC892D;
+  }
+  
+  .custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #D7B947;
+    content: "/"; 
+  }
+.container .row .con{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #F5DF6B;
+}
+.container .row .con h4{
+    color: #D7B947;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container .row .con h5{
+    color: #BC892D;
+    font-family: Assistant;
+    font-size: 25px;
+    margin: 0 0 30px 0;
+}
+.container .row .con p .sty{
+    color: #D7B947;
+    font-size: 25px;
+}
+.container .row .con p .styl{
+    text-decoration: line-through;
+}
+.container .row .con p{
+    color: #BC892D;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: justify;
+}
+.container .row .con .buttons{
+    margin: 30px 0;
+}
+.container .row .con .buttons a{
+    box-shadow: 0 1px 3px #130601;
+}

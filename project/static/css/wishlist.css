@@ -1,0 +1,52 @@
+body{
+    
+    background-color: #331F16 !important;
+    overflow-x: hidden;
+}
+
+/* -------------------------------items---------------------------- */
+.row h3{
+    color: #F5DF6B;
+    margin: 50px 0 30px 0;
+}
+.row hr{
+    color: #F5DF6B;
+    margin: 0 0 90px 0;
+}
+.row .card{
+    height: 380px;
+    position: relative;
+}
+.row .card-img-top {
+    height: 260px; 
+    /* width: 265px;  */
+  }
+.row h5{
+  color:#331F16;
+}
+.row .card-text{
+    color:#331F16;
+    font-size: 21px;
+}
+.row p span{
+    text-decoration: line-through;
+    font-size: 16px;
+    color: red;
+}
+.close {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    padding: 4px 10px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid;
+    color: #636262;
+    border-radius: 50%;
+    background-color: gainsboro;
+}
+.close:hover{
+    border: 1px solid #0e0d0d;
+    background-color: transparent;
+}

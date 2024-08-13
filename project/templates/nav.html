@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+        <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    </head>
+    <body>
+    <div class="bar">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgba(0, 0, 0, 0.7); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);">
+
+                <div class="container">
+                    <img src="{% static 'image/W__1_-removebg-preview.png' %}" class="img-fluid" alt="No img">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto justify-content-center">
+                          <li class="nav-item">
+                            <a class="nav-link text-center" aria-current="page" href="{% url 'home' %}">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-center" href="{% url 'shop' %}">Shop</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-center" href="{% url 'about' %}">About us</a>
+                          </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto justify-content-center">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa-solid fa-user person d-block"></i>Profile
+                            </a>
+                            <ul class="dropdown-menu">
+                              {% if request.user.is_authenticated %}
+                              <li><a class="dropdown-item">Hello,{{request.user}}</a></li>
+                              <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+                              {% else %}
+                              <li><a class="dropdown-item" href="{% url 'login' %}">Log In</a></li>
+                              <li><a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a></li>
+                              {% endif %}
+                            </ul>
+                          </li>
+                          <li class="nav-item text-center ">
+                            <i class="fa-solid fa-heart heart "></i>
+                            <a class="nav-link text-center" href="{% url 'wishlist' %}">Wishlist</a>
+                          </li>
+                          <li class="nav-item text-center">
+                            <i class="fa-sharp fa-solid fa-bag-shopping  bag"></i>
+                            <a class="nav-link text-center" href="{% url 'view_cart' %}">Bag</a>
+                          </li>
+                        </ul>
+                      </div>
+                </div>
+
+        </nav>
+     </div>
+
+     <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+     <script>
+      console.log('Bootstrap JS loaded');
+      console.log('Navbar toggler:', document.querySelector('.navbar-toggler'));
+      console.log('Navbar collapse:', document.querySelector('.collapse.navbar-collapse'));
+      </script>
+    </body>
+</html>

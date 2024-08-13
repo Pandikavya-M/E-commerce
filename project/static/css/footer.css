@@ -1,0 +1,27 @@
+.Footermain{
+    margin-top: 90px;
+    width: 100%;
+}
+.row .col{
+    margin: 40px 0;
+    color: #BC892D;
+    /* border: 1px solid wheat; */
+}
+.Footermain .row .col.logoo {
+    flex: 0 0 33.33%; 
+    margin: 40px auto;
+    text-align: center;
+}
+.row .col .topic img{
+    height: 60px;
+    width: 130px;
+    margin-bottom: 30px;
+}
+.row .col h3{
+    font-family: mv boli;
+    margin-bottom: 20px;
+}
+.row .col p a{
+    color: #BC892D;
+    text-decoration: none;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playwrite Danmark Loopet">
+    
+</head>
+<body>
+    <div class="Footermain" style="background-color: rgba(0, 0, 0, 0.4); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);">
+        <div class="row">
+            <div class="col logoo">
+                <div class="topic">
+                    <img src="{% static 'image/W__1_-removebg-preview.png' %}" alt="logo">
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                </div>
+                
+                <p>Copyright © 2024 by Wallet <br>Inc.All rights reserved . </p>
+            </div>
+            <div class="col">
+                <h3>Account</h3>
+                <p><a href="{% url 'signup' %}">Create account</a></p>
+                <p><a href="{% url 'login' %}">Log in</a></p>
+                <p>iOS app</p>
+                <p>Android app</p>
+            </div>
+            <div class="col">
+                <h3>Company</h3>
+                <p><a href="{% url 'about' %}">About Wallet</a></p>
+                <p>Guid partners</p>
+                <p>Careers</p>
+            </div>
+            <div class="col">
+                <h3>Resources</h3>
+                <p>Help center</p>
+                <p>Privacy & terms</p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

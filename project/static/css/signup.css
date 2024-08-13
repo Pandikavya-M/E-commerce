@@ -1,0 +1,98 @@
+body{
+    background-color: #331F16 !important;
+    overflow-x: hidden;
+    color: #BC892D;
+}
+
+.sign{
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 80%;
+    box-shadow: 0 10px 50px #130601;
+    border: 1px solid #BC892D;
+    border-radius: 15px;
+    padding: 2%;
+    margin: 10% auto;
+    background-color: rgba(255,255,255, 0.1);
+}
+.sign h2{
+    font-family: mv boli;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #F5DF6B;
+    margin: 20px ;
+}
+.sign .name input{
+    width: 49%;
+    padding: 15px;
+    border-radius: 40px;
+    border-color: #BC892D;
+    color: #F5DF6B;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sign input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 40px;
+    border-color: #BC892D;
+    color: #F5DF6B;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sign input::placeholder{
+    color: #F5DF6B;
+}
+.sign .policy input{
+    width: 5px;
+}
+.sign .policy label{
+    color: #BC892D;
+    margin-top: 8px;
+}
+.sign .policy label a{
+    color: #ffeb6c;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sign .policy label a:hover{
+    background: -webkit-linear-gradient(#ff5400,#ffe53b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.sign button{
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    /* border-color: white; */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #BC892D;
+    box-shadow: 0 1px 3px #130601;
+}
+.sign button:hover{
+    background-image: linear-gradient(to right, #ffe53b,#ff2525) ;
+    color: white;
+}
+.sign .endline{
+    text-align: center;
+}
+.sign .endline p{
+    color:white;
+}
+.endline .reg{
+    color: #ffeb6c;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.endline .reg:hover{
+    background: -webkit-linear-gradient(#ff5400,#ffe53b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

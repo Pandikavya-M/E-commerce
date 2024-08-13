@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+</head>
+<body>
+    {% include 'nav.html'%}
+
+    <div class="slider" style="margin-top: 100px;">
+      <!-- <h3>Exclusive Offers</h3> -->
+      <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <a href="{% url 'product' name='Kitchen Utensils' %}">
+                  {% for x in pics %}
+                      {% if forloop.counter == 7 %}
+                          <img src="{{ x.image1.url }}" alt="no offer">
+                      {% endif %}
+                  {% endfor %}
+                  </a>
+              </div>
+              <div class="carousel-item">
+                  <a href="{% url 'product' name='Combo-Sets' %}">
+                  {% for x in pics %}
+                      {% if forloop.counter == 8 %}
+                          <img src="{{ x.image1.url }}" alt="no offer">
+                      {% endif %}
+                  {% endfor %}
+                  </a>
+              </div>
+              <div class="carousel-item">
+                  <a href="{% url 'product' name='Footwears' %}">
+                  {% for x in pics %}
+                      {% if forloop.counter == 9 %}
+                          <img src="{{ x.image1.url }}" alt="no offer">
+                      {% endif %}
+                  {% endfor %}
+                  </a>
+              </div>
+              <div class="carousel-item">
+                  <a href="{% url 'product' name='Home Decors' %}">
+                  {% for x in pics %}
+                      {% if forloop.counter == 10 %}
+                          <img src="{{ x.image1.url }}" alt="no offer">
+                      {% endif %}
+                  {% endfor %} 
+                  </a>   
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </div>
+
+
+    <div class="categ container">
+        <h2> Top Categories</h2>
+        <hr>
+        <div class="row">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">                           
+            {% for x in shops %}
+            <li class="nav-item " role="presentation">
+            {% if forloop.counter == 1 %}
+            <div class="row">
+                <div class=" col-6 col-sm-6 col-md-4 col-lg-3">
+                <button class="nav-link active" id="pills-{{x.title}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{x.title}}" type="button" role="tab" aria-controls="pills-{{x.title}}" aria-selected="true">
+                    
+                    <div class="card">
+                        <div class="card-body">
+                        <a href="#{{ x.title }}">
+                            <h5 class="card-title">{{x.name}}</h5>
+                            <img src="{{ x.image.url }}" class="card-img-top" alt="No image">
+                        </a>
+                        </div>
+                    </div> 
+
+                </button>
+                </div> 
+            </div>
+            </li>
+            {% else %}
+            <li class="nav-item " role="presentation">
+                <div class="row">
+                    <div class=" col-6 col-sm-6 col-md-4 col-lg-3">
+                    <button class="nav-link" id="pills-{{x.title}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{x.title}}" type="button" role="tab" aria-controls="pills-{{x.title}}" aria-selected="false">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                            <a href="#{{ x.title }}">
+                                <h5 class="card-title">{{x.name}}</h5>
+                                <img src="{{ x.image.url }}" class="card-img-top" alt="No image">
+                            </a>
+                            </div>
+                        </div>
+                    
+                    </button>
+        </div>
+        </div>
+            </li>
+            {% endif %}
+            {% endfor %}         
+        </ul>
+      </div>
+<hr class="line">
+      
+        <div class="tab-content" id="pills-tabContent">
+            {% for x in shops %}
+              {% if forloop.counter == 1 %}
+                <div class="tab-pane fade show active" id="pills-{{x.title}}" role="tabpanel" aria-labelledby="pills-{{x.title}}-tab">
+                    <h4 id="{{ x.title }}">SubCategories-{{ x.title }}</h4>
+                  <div class="row">
+                    {% for sub in Subcateg %}
+                      {% if sub.titlecat == x.title %}
+                        <div class=" col-6 col-sm-6 col-md-4 col-lg-3">
+                          <div class="card">
+                            <div class="card-body">
+                            <a href="{% url 'product' sub.name %}">
+                              <h5 class="card-title">{{sub.name}}</h5>
+                              <img src="{{ sub.image.url }}" class="card-img-top" alt="No image">
+                            </a>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <div class="tab-pane fade" id="pills-{{x.title}}" role="tabpanel" aria-labelledby="pills-{{x.title}}-tab">
+                <h4 id="{{ x.title }}">SubCategories-{{ x.title }}</h4>
+                  <div class="row">
+                    {% for sub in Subcateg %}
+                      {% if sub.titlecat == x.title %}
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                          <div class="card">
+                            <div class="card-body">
+                            <a href="{% url 'product' sub.name %}">
+                              <h5 class="card-title">{{sub.name}}</h5>
+                              <img src="{{ sub.image.url }}" class="card-img-top" alt="No image">
+                            </a>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>    
+      </div>
+    
+    {% include 'footer.html' %}
+    <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
+

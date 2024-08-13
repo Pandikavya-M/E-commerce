@@ -1,0 +1,39 @@
+.bar nav.navbar .bg-dark{
+    background: none !important;
+    border-color: transparent !important;
+    opacity: 0.7 !important;
+}
+.bar img{
+    height: 70px;
+    width: 120px;
+}
+.bar .navbar-toggler{
+    background-color: #BC892D;
+    color: #BC892D;
+}
+
+.bar .nav-link {
+    color: #BC892D;
+}
+.bar .nav-item .person{
+    color: #BC892D;
+    padding:0 0 9px 0;
+}
+.bar .nav-item .heart{
+    color: #BC892D;
+    /* padding-left: 5px; */
+}
+.bar .nav-item .bag{
+    color: #BC892D;
+    /* padding-left: 15px; */
+}
+.bar .nav-link:hover {
+    /* text-decoration: underline; */
+    background: -webkit-linear-gradient(#BC892D, #EED1C4,#E5DA4C);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid transparent;
+    /* border-image: linear-gradient(to right, #4CD9F4, #1893E3, #1165BD) 1; */
+    border-image: linear-gradient(to right, #BC892D, #EAE09B,#E5DA4C) 1;
+  }
